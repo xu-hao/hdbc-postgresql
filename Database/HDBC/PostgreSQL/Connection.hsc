@@ -99,7 +99,6 @@ mkConn auto_transaction args conn = withConn conn $
                             Impl.dbTransactionSupport = True,
                             Impl.getTables = fgetTables conn children,
                             Impl.describeTable = fdescribeTable conn children}
-       _ <- quickQuery rconn "SET client_encoding TO utf8;" []
        return rconn
 
 -- | Connect to a PostgreSQL server,  and automatically disconnect
