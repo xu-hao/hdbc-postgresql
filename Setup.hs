@@ -42,8 +42,8 @@ instance ConstOrId a (b -> a) where
 
 pgconfigProgram = (simpleProgram "pgconfig or pg_config") {
     programFindLocation = \verbosity -> constOrId $ do
-      pgconfig  <- findProgramLocation verbosity "pgconfig"
-      pg_config <- findProgramLocation verbosity "pg_config"
+      pgconfig  <- findProgramOnSearchPath verbosity [ProgramSearchPathDefault] "pgconfig"
+      pg_config <- findProgramOnSearchPath verbosity [ProgramSearchPathDefault] "pg_config"
       return (pgconfig `mplus` pg_config)
   }
 
