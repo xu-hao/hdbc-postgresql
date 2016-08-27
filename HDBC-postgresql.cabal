@@ -1,4 +1,4 @@
-Name: HDBC-postgresql-cockroachdb
+Name: HDBC-postgresql
 Version: 2.3.2.3
 License: BSD3
 Maintainer: Nicolas Wu <nicolas.wu@gmail.com>
